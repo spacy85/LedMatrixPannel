@@ -1,7 +1,7 @@
 # LedMatrixPannel
 Image management of an ArcadeMarquee
 
-In giro di cabinari Arcade se ne vedono tanti, di modificati o costruiti da zero, ma una delle caratteristiche più interessanti è il "Marquee" digitale.
+In giro di cabinati Arcade se ne vedono tanti, di modificati o costruiti da zero, ma una delle caratteristiche più interessanti è il "Marquee" digitale.
 Per coloro che non sanno cos'è un "marquee", è l'ampia finestra rettangolare che si trova nella parte superiore di un cabinato arcade che di solito mostra il nome del gioco a cui stai giocando. I cabinati Mame a volte mostrano semplicemente MAME o qualcosa  che generalmente dice "Arcade" e non sono digitali.
 Quando abbiamo iniziato a costruire il nostro cabinato volevamo un marquee digitale e di farlo cambiare dinamicamente per ogni gioco.
 Le opzioni in rete ne sono tante, alcune più complicate e costose altre troppo semplici.
