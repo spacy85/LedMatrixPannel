@@ -13,5 +13,8 @@ Il problema nasce dopo, dovendo fare comunicare i due raspberry, ovvero il raspb
 Ho scritto quindi questo programma che gestisce i due pannelli led.
 Questo programma va a leggere su un file di testo, che crea Retropie, sul quale è indicato quale gioco è avviato e su che tipo di macchina.
 Una volta letto il file va a ricercare il file png associato al gioco, se c'è lo riproduce, altrimenti riproduce quello della macchina virtuale. Se anche questa non c'è allora riproduce la schermata principale di default.
+Per la gestione del pannello ho utilizzato le seguenti librerie di Hzeller:
+https://github.com/hzeller/rpi-rgb-led-matrix
+
 
 
