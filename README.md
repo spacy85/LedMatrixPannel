@@ -18,3 +18,7 @@ https://github.com/hzeller/rpi-rgb-led-matrix
 
 
 
+![20191002_192631](https://user-images.githubusercontent.com/57826009/136056518-9ba12d80-026c-43fd-a299-cd2f961cc67a.jpg)
+![20191113_221530](https://user-images.githubusercontent.com/57826009/136056524-a8c59ad9-69e5-4148-b0be-78bc0099ca43.jpg)
+![IMG_20191211_195437](https://user-images.githubusercontent.com/57826009/136056525-e69dd688-3455-419d-aa2b-361b191004b8.jpg)
+![IMG_20200113_190311](https://user-images.githubusercontent.com/57826009/136056526-a5f56118-0aca-4370-a9d5-bc90b2104bb1.jpg)
