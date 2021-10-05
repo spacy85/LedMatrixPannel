@@ -28,14 +28,14 @@ def Found(file, obj) :
 #23
 default ='default.png'
 display='default'
-marquee = 'default'
+marquee = 'default' 
 
-# Percorso del file Led.txt dove vengono scritte rom e system da emulationstation 
+# Link of Led.txt where are name of rom and emulationstation 
 path_file = Path('/mnt/abc/led.txt')
-# Directory delle immagini per le rom
+# Directory for rom Image
 path_rom = Path('/home/pi/marquee/')
 pipe= subprocess.Popen("/home/pi/rpi-rgb-led-matrix/bindings/python/marquee.py {0}".format(path_rom/'default.png'), preexec_fn=os.setsid, shell=True)					
-#ciclo lettura del file
+#reading file's cycle
 
 try :   
 	while 1:	
