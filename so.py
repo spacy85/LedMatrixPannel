@@ -34,7 +34,7 @@ marquee = 'default'
 path_file = Path('/mnt/abc/led.txt')
 # Directory delle immagini per le rom
 path_rom = Path('/home/pi/marquee/')
-pipe= subprocess.Popen("/home/pi/rpi-rgb-led-matrix/bindings/python/samples/marquee.py {0}".format(path_rom/'default.png'), preexec_fn=os.setsid, shell=True)					
+pipe= subprocess.Popen("/home/pi/rpi-rgb-led-matrix/bindings/python/marquee.py {0}".format(path_rom/'default.png'), preexec_fn=os.setsid, shell=True)					
 #ciclo lettura del file
 
 try :   
@@ -43,7 +43,7 @@ try :
 			if path_file.is_file():		
 				if (marquee !='default'):					
 					os.killpg(pipe.pid, signal.SIGSTOP)
-					pipe= subprocess.Popen("/home/pi/rpi-rgb-led-matrix/bindings/python/samples/marquee.py {0}".format(path_rom/'default.png'), preexec_fn=os.setsid, shell=True)					
+					pipe= subprocess.Popen("/home/pi/rpi-rgb-led-matrix/bindings/python/marquee.py {0}".format(path_rom/'default.png'), preexec_fn=os.setsid, shell=True)					
 					marquee= 'default'
 					file = open(path_file,'w')
 					file.write('exit \n')
@@ -60,15 +60,15 @@ try :
 								if( system != default) :										
 									if (rom != display) :	
 										os.killpg(pipe.pid, signal.SIGSTOP)
-										pipe= subprocess.Popen("/home/pi/rpi-rgb-led-matrix/bindings/python/samples/marquee.py {0}".format(Found(system,'systems')), preexec_fn=os.setsid, shell=True)
+										pipe= subprocess.Popen("/home/pi/rpi-rgb-led-matrix/bindings/python/marquee.py {0}".format(Found(system,'systems')), preexec_fn=os.setsid, shell=True)
 										time.sleep(7)
 										display = rom															
 										os.killpg(pipe.pid, signal.SIGSTOP)
-										pipe= subprocess.Popen("/home/pi/rpi-rgb-led-matrix/bindings/python/samples/marquee.py {0}".format(Found(rom,'roms')), preexec_fn=os.setsid, shell=True)
+										pipe= subprocess.Popen("/home/pi/rpi-rgb-led-matrix/bindings/python/marquee.py {0}".format(Found(rom,'roms')), preexec_fn=os.setsid, shell=True)
 								else:
 									if (display != default) :
 										os.killpg(pipe.pid, signal.SIGSTOP)
-										pipe= subprocess.Popen("/home/pi/rpi-rgb-led-matrix/bindings/python/samples/marquee.py {0}".format(path_rom/'default.png'), preexec_fn=os.setsid, shell=True)					
+										pipe= subprocess.Popen("/home/pi/rpi-rgb-led-matrix/bindings/python/marquee.py {0}".format(path_rom/'default.png'), preexec_fn=os.setsid, shell=True)					
 										display = default					
 							else:
 								os.system("sudo reboot -h now")
@@ -79,14 +79,14 @@ try :
 			else:
 				if (marquee != 'reboot') :
 					os.killpg(pipe.pid, signal.SIGSTOP)
-					pipe= subprocess.Popen("/home/pi/rpi-rgb-led-matrix/bindings/python/samples/runtext.py", preexec_fn=os.setsid, shell=True)
+					pipe= subprocess.Popen("/home/pi/rpi-rgb-led-matrix/bindings/python/runtext.py", preexec_fn=os.setsid, shell=True)
 					marquee='reboot'
 				time.sleep(2)
 				os.system("sudo mount -a")		
 		except OSError:				
 				if (marquee != 'reboot'):
                     			os.killpg(pipe.pid, signal.SIGSTOP)
-                    			pipe= subprocess.Popen("/home/pi/rpi-rgb-led-matrix/bindings/python/samples/runtext.py", preexec_fn=os.setsid, shell=True)
+                    			pipe= subprocess.Popen("/home/pi/rpi-rgb-led-matrix/bindings/python/runtext.py", preexec_fn=os.setsid, shell=True)
                     			marquee='reboot'
 				time.sleep(2)
 				os.system("sudo mount -a")
