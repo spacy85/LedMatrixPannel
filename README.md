@@ -27,12 +27,11 @@ fi
 exit 0
 
 
-Questo programma, so.py, va a leggere il file di testo sul qualke è indicato, ogni volta, quale gioco (rom) ed emulatore(station) è in esecuzione.
+Il programma, so.py, va a leggere il file di testo sul qualke è indicato, ogni volta, quale gioco (rom) ed emulatore(station) è in esecuzione.
 Una volta letto la "rom" e la "station", il programma va a ricercare i file png associati ad essi, visualizzando sul pannello prima la rom, se non c0è la station, altrimenti l'immagine di default del cabinato.
 Per la gestione del pannello ho utilizzato le seguenti librerie di Hzeller:
 https://github.com/hzeller/rpi-rgb-led-matrix
 
-
-
+n.b: il file animate.py permette la riproduzione di gif animate.
 ![IMG_20191211_195437](https://user-images.githubusercontent.com/57826009/136056525-e69dd688-3455-419d-aa2b-361b191004b8.jpg)
 ![IMG_20200113_190311](https://user-images.githubusercontent.com/57826009/136056526-a5f56118-0aca-4370-a9d5-bc90b2104bb1.jpg)
