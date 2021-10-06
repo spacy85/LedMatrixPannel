@@ -7,18 +7,32 @@ Quando abbiamo iniziato a costruire il nostro cabinato volevamo un marquee digit
 Le opzioni in rete ne sono tante, alcune più complicate e costose altre troppo semplici.
 Nella ricerca ci siamo imbattuti nei Led Marquee della Pixelcade e ce ne siamo innamorati.
 Volendo preplicarli abbiamo trovato i pannelli led-matrix dell'Adafruit che facevano proprio al caso nostro in quanto, oltre ad avere un aspetto retrò, questi display sono modulari e possono adattarsi a quasi qualsiasi cosa.
-Abbiamo quindi preso due pannelli da 63x32 e un rasperry pi3.
+Abbiamo quindi preso due pannelli da 63x32 e un Rasperry Pi3.
+
+![20191002_192631](https://user-images.githubusercontent.com/57826009/136056518-9ba12d80-026c-43fd-a299-cd2f961cc67a.jpg)
+
 Fin qui tutto semplice.
-Il problema nasce dopo, dovendo fare comunicare i due raspberry, ovvero il raspberry su cui gira Retropie con il raspberry che gestisce il marquee.
-Ho scritto quindi questo programma che gestisce i due pannelli led.
-Questo programma va a leggere su un file di testo, che crea Retropie, sul quale è indicato quale gioco è avviato e su che tipo di macchina.
-Una volta letto il file va a ricercare il file png associato al gioco, se c'è lo riproduce, altrimenti riproduce quello della macchina virtuale. Se anche questa non c'è allora riproduce la schermata principale di default.
+Ma entriamo nei dettagli.
+La nostra macchina arcade gira su Retropie installato su un altro Raspberry Pi3.
+Dato che i due Raspberry non sono fisicamente collegati tra loro, l'unico modo per farli comunicare era via rete.
+All'intero della cartella Rom di Retropie, viene creato un file di testo che viene condiviso, via samba, con il Raspberry che gestisce il marquee.
+
+_IP=$(hostname -I) || true
+if [ "$_IP" ]; then
+    printf "My IP address is %s\n" "$_IP"
+sudo python3 ./home/pi/rpi-led-matrix/bindings/python/animate.py /home/pi/marquee/start.gif
+sudo mount -a
+sudo python3 ./home/pi/rpi-led-matrix/bindings/python/so.py &
+fi
+exit 0
+
+
+Questo programma, so.py, va a leggere il file di testo sul qualke è indicato, ogni volta, quale gioco (rom) ed emulatore(station) è in esecuzione.
+Una volta letto la "rom" e la "station", il programma va a ricercare i file png associati ad essi, visualizzando sul pannello prima la rom, se non c0è la station, altrimenti l'immagine di default del cabinato.
 Per la gestione del pannello ho utilizzato le seguenti librerie di Hzeller:
 https://github.com/hzeller/rpi-rgb-led-matrix
 
 
 
-![20191002_192631](https://user-images.githubusercontent.com/57826009/136056518-9ba12d80-026c-43fd-a299-cd2f961cc67a.jpg)
-![20191113_221530](https://user-images.githubusercontent.com/57826009/136056524-a8c59ad9-69e5-4148-b0be-78bc0099ca43.jpg)
 ![IMG_20191211_195437](https://user-images.githubusercontent.com/57826009/136056525-e69dd688-3455-419d-aa2b-361b191004b8.jpg)
 ![IMG_20200113_190311](https://user-images.githubusercontent.com/57826009/136056526-a5f56118-0aca-4370-a9d5-bc90b2104bb1.jpg)
